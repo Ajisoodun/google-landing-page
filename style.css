@@ -1,0 +1,386 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    align-items: center;
+    justify-content: right;
+    gap: 2rem;
+    padding: 0.2rem 1rem;
+    font-size: 0.9rem;
+}
+.mail, .img{
+    color: black;
+}
+a{
+    text-decoration: none;
+}
+.circle{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    /* grid-column-gap: 2rem; */
+    /* grid-row-gap: 2rem; */
+    height: 22px;
+    width: 22px;
+}
+.circle-dot{
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background-color: rgb(68, 68, 68);
+    overflow: hidden;
+}
+.circle:hover{
+    box-shadow: 0 0 10px 5px rgb(170, 170, 170);
+    cursor: pointer;
+}
+.profile{
+   height: 30px;
+   width: 30px;
+   background-color: rgb(255, 62, 101);
+   display: flex;
+   justify-content: center;
+   /* this place thi shift the item to the center of the same line.  */
+   align-items: center;
+   /* this place the item in the middle of the object.  */
+   border-radius: 50%;
+   color: white;
+   font-size: 1rem;
+}
+.profile:hover{
+    box-shadow: 0 1px 10px 1px rgb(170, 170, 170);
+    cursor: pointer;
+
+}
+.gog{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height: auto;
+    width: auto;
+    /* padding: 1rem; */
+    padding-top: 0.5rem;
+}
+.search-box{
+    display: flex;
+    align-items: center;
+    place-content: center;
+    padding-top: 1rem;
+    
+}
+.fa-sharp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(170, 170, 170);
+    position: absolute;
+    left: 32%;
+}
+.camera-search{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 32%;
+}
+.voice{
+    height: 37%;
+    width: 37px;
+    top: 31%;
+    position: absolute;
+    right: 35%;
+    background-image: url("data:image/png;base64,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");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.voice:hover, .camera-search:hover{
+    cursor: pointer;
+}
+.search{
+    /* height: 66px; */
+    width: 40%;
+    border-width: 1px 0 1px 0;
+    border-color: rgb(221, 221, 221);
+    border-style: solid;
+    height: 3rem;
+    width: 40%;
+    border-radius: 2rem;
+}
+.search:hover{
+    box-shadow: 0 8px 6px -8px rgb(221, 221, 221);
+}
+.mid-page{
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    place-content: center;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    margin-left: 10%;
+    height: 3rem;
+    width: 80%;   
+}
+.g-search, .lucky{
+    height: 75%;
+    width: 13%;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: rgb(68, 68, 68);
+    background-color: rgb(245, 244, 244);
+}
+.g-search:hover, .lucky:hover{
+    border: 1px solid rgb(221, 221, 221);
+    box-shadow: 0 8px 6px -8px rgb(221, 221, 221);
+    cursor: pointer;
+}
+.lucky:focus, .g-search:focus{
+    border-color: rgb(0, 119, 255);
+}
+.languages{
+    display: flex;
+    align-items: center;
+    place-content: center;
+    gap: 0.5rem;
+    list-style: none;
+    padding-top: 5px;
+    /* padding-bottom: 12.2rem; */
+    padding-right: 2.5rem;
+    color: rgb(117, 117, 117);
+    font-size: 0.9rem;
+    padding-bottom: 9rem;
+    /* above is what you would change to make the screen width reduce */
+}
+li:hover{
+    text-decoration: underline;
+}
+.nav2{
+    background-color: rgb(233, 233, 233);
+    /* padding-bottom: 0.5rem; */
+}
+.naija{
+    border-bottom: 1px solid #dadce0;
+    padding: 0.1rem 0 0.1rem 3rem;
+    font-size: 0.9rem;
+    color: rgb(117, 117, 117);
+}
+.nav3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40rem;
+    /* above is what you would change to make the screen width reduce */
+}
+.nav-left{
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+.nav-right {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    padding-right: 2rem;
+}
+.leaf{
+    width: 15px;
+    height: 15px;
+}
+.nav-leaf{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    /* above is what you would change to make the screen width reduce */
+    gap: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+}
+.ads, .abt, .bus, .car, .how, .privacy, .terms, .set{
+    color: rgb(117, 117, 117);
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .fa-sharp{
+        left: 25%;
+    }
+    .camera-search{
+        right: 25%;
+    }
+    .voice{
+        top: 31.5%;
+        right: 28%;
+    }
+    .search{
+        height: 3rem;
+        width: 55%;
+    }
+    .mid-page{
+        margin-left: 5px;
+        height: 3rem;
+        width: 99%;   
+    }
+    .languages{
+        padding-bottom: 5.5rem;
+        /* above is what you would change to make the screen width reduce */
+    }
+    .naija{
+        border-bottom: 1px solid #cacaca;
+        padding: 0.1rem 0 0.1rem 2rem;
+    }
+    .nav3{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 2.4rem;
+        gap: 7rem;
+        /* above is what you would change to make the screen width reduce */
+    }
+    .nav-left{
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+    }
+    .nav-right {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        padding-right: 2rem;
+    }
+    .nav-leaf{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        /* above is what you would change to make the screen width reduce */
+        gap: 5px;
+        position: absolute;
+        bottom: 8%;
+        left: 38%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .fa-sharp{
+        left: 18%;
+    }
+    .camera-search{
+        right: 18%;
+    }
+    .voice{
+        top: 31.5%;
+        right: 22%;
+    }
+    .search{
+        width: 70%;
+    }
+    .mid-page{
+        height: 3rem;
+        width: 100%;
+        margin-left: -1%;
+    }
+    .g-search, .lucky{
+        height: 75%;
+        width: 20%;
+    }
+    .languages{
+        padding-bottom: 5.1rem;
+        padding-top: 0;
+        /* above is what you would change to make the screen width reduce */
+    }
+    .naija{
+        border-bottom: 1px solid #cacaca;
+        padding: 0.1rem 0 0.1rem 2rem;
+    }
+    .nav3{
+        padding-top: 6.3rem;
+        gap: 5px;
+        position: relative;
+        /* above is what you would change to make the screen width reduce */
+    }
+    .nav-left{
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        position: absolute;
+        left: 5%;
+        top: 55%;
+    }
+    .nav-right {
+        position: absolute;
+        top: 55%;
+        right: 5%;
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        padding-right: 0;
+    }
+    .nav-leaf{
+        position: absolute;
+        bottom: 7%;
+        left: 35%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .fa-sharp{
+        left: 10%;
+    }
+    .camera-search{
+        right: 10%;
+    }
+    .voice{
+        top: 32%;
+        right: 15%;
+    }
+    .search{
+        width: 90%;
+    }
+    .g-search, .lucky{
+        height: 75%;
+        width: 30%;
+    }
+    .languages{
+        padding-bottom: 2.4rem;
+        /* above is what you would change to make the screen width reduce */
+    }
+    .nav2{
+        background-color: rgb(233, 233, 233);
+    }
+    .naija{
+        border-bottom: 1px solid #cacaca;
+        padding: 0.1rem 0 0.1rem 2rem;
+    }
+    .nav3{
+        padding-top: 9rem;
+        gap: 5px;
+        position: relative;
+        /* above is what you would change to make the screen width reduce */
+    }
+    .nav-left{
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        position: absolute;
+        left: 8%;
+        top: 35%;
+    }
+    .nav-right {
+        position: absolute;
+        top: 65%;
+        right: 33%;
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        padding-right: 0;
+    }
+    .nav-leaf{
+        position: absolute;
+        bottom: 16%;
+        left: 25%;
+    }
+}
